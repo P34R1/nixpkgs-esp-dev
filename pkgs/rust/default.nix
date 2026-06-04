@@ -1,12 +1,12 @@
 {
-  version ? "1.88.0.0",
+  version ? "1.95.0.0",
   callPackage,
   rust,
   lib,
   stdenv,
   fetchurl,
-  rustcHash ? "sha256-dFNJFHSl9yiyRIFlHUPLzq+S9438q+fLiCxr8h/uBQU=",
-  rustSrcHash ? "sha256-m35u//UHO7uFtQ5mn/mVhNuJ1PCsuljgkD3Rmv3uuaE=",
+  rustcHash ? "sha256-qtL7JLrqtq1hxB8ALxNv4LQW7zmlAdKXUKtmwYpplDM=",
+  rustSrcHash ? "sha256-cIvuM3rC1BwOhhr5MEe//skaBS+8tJV5JdhApB8ydxc=",
 }: let
   # Remove keys from attrsets whose value is null.
   removeNulls = set:
