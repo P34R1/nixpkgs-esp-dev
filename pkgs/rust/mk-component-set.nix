@@ -81,13 +81,14 @@
       postInstall = ''
         # Function moves well-known files from etc/
         handleEtc() {
-          if [[ -d "$1" ]]; then
+          if [[ -e "$1" ]]; then
             mkdir -p "$(dirname "$2")"
             mv -T "$1" "$2"
           fi
         }
         if [[ -e "$out/etc" ]]; then
           handleEtc "$out/etc/bash_completion.d" "$out/share/bash-completion/completions"
+          handleEtc "$out/etc/target-spec-json-schema.json" "$out/share/rust/target-spec-json-schema.json"
           rmdir $out/etc || { echo "Installer tries to install to /etc: $(ls $out/etc)"; exit 1; }
         fi
       '';
